@@ -12,7 +12,7 @@
   - **极简高级风**（默认）：MUJI / Apple / Kindle 视觉体系，去杂纹、大留白、细线下划线页签与纯粹瑞士网格排版，从待机到交互与弹窗零割裂。
   - **温馨圆角卡片风**：保留 13 套手绘像素食材图标与温暖手账圆角卡片手感，配套精修无割裂 16 灰阶卡片待机海报。
 - **5 套真 16 灰阶（4bpp）抗锯齿待机封面**
-  - 休眠常亮不费电，可在手机网页「设置」中随时切换：`MUJI 瑞士双栏`、`Apple 极简大时钟`、`Kindle 单向历书页`、`原研哉 黑白撞色海报`、`温馨圆角卡片看板`。
+  - 全部采用**大号抗锯齿日期主角 + 小字更新时间戳**（每天早起自动刷新一次全天不穿帮，唤醒期右上角时钟每分钟静默局刷）；可在手机网页「设置」中随时切换：`MUJI 瑞士双栏日历`、`Apple 极简大日历`、`Kindle 单向历书页`、`原研哉 黑白撞色海报`、`温馨圆角卡片看板`。
 - **库存管理 + 长按下键整页连翻**
   - 支持最多 **80 样**食材；绝不虚构保质期（未设到期天数时如实显示「今天放入 / 已放 N 天」）。
   - 左焦详情 + 右列 5 项清单，食材超过 5 样时**按住下键即可连续整页翻页**、松手即停不冲过头。
@@ -48,8 +48,8 @@
 
 | 文件名 | 烧录起始地址 | 适用场景 |
 | :--- | :---: | :--- |
-| `zectrix-fridge-v2.0.0-merged-0x0.bin` | `0x0` | **首次安装 / 全新刷入（推荐）**：单文件已合并 bootloader、分区表与主程序 |
-| `zectrix-fridge-v2.0.0-app-0x20000.bin` | `0x20000` | **老版本升级**：仅覆盖应用分区，保留你已有的冰箱库存、菜谱与 Wi-Fi 配置 |
+| `zectrix-fridge-v0.0.2-merged-0x0.bin` | `0x0` | **首次安装 / 全新刷入（推荐）**：单文件已合并 bootloader、分区表与主程序 |
+| `zectrix-fridge-v0.0.2-app-0x20000.bin` | `0x20000` | **老版本升级**：仅覆盖应用分区，保留你已有的冰箱库存、菜谱与 Wi-Fi 配置 |
 | `SHA256SUMS.txt` | — | 固件 SHA-256 校验值 |
 
 ---
@@ -73,9 +73,9 @@
    esptool.py --chip esp32s3 -p <你的串口> -b 460800 \
      --before default_reset --after hard_reset \
      write_flash --flash_mode dio --flash_size 16MB --flash_freq 80m \
-     0x0 zectrix-fridge-v2.0.0-merged-0x0.bin
+     0x0 zectrix-fridge-v0.0.2-merged-0x0.bin
    ```
-   *(若已刷过本固件 v2.x，仅升级主程序并保留库存数据，把最后一行换成 `0x20000 zectrix-fridge-v2.0.0-app-0x20000.bin` 即可。)*
+   *(若已刷过本固件 旧版本，仅升级主程序并保留库存数据，把最后一行换成 `0x20000 zectrix-fridge-v0.0.2-app-0x20000.bin` 即可。)*
 
 > **常见串口名称**：macOS 一般为 `/dev/cu.usbmodem*`，Windows 为 `COM3` / `COM4` 等，Linux 为 `/dev/ttyACM0`。
 
@@ -83,7 +83,7 @@
 
 可使用任意支持 ESP32-S3 的网页烧录器（Chrome / Edge 打开 ESP Web Tool 或乐鑫 Flash Download Tool）：
 - 芯片选择 **ESP32-S3**，Flash 模式 **DIO**，频率 **80MHz**，容量 **16MB**
-- 填入烧录地址 **`0x0`**，选择下载的 `zectrix-fridge-v2.0.0-merged-0x0.bin`，点击烧录即可。
+- 填入烧录地址 **`0x0`**，选择下载的 `zectrix-fridge-v0.0.2-merged-0x0.bin`，点击烧录即可。
 
 ---
 
