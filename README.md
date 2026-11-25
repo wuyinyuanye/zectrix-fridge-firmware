@@ -2,7 +2,7 @@
 
 面向 **ZECTRIX NOTE4**（ESP32-S3 · 4.2 寸 400×300 黑白 / 16 灰阶电子墨水屏）的智能冰箱库存、菜谱推荐、烹饪引导、购物清单与语音助手固件预编译发布仓库。
 
-> 本仓库为**闭源预编译成品固件发布仓**（不含源代码，仅提供免费脱敏固件、界面预览与刷机指南）。固件默认不包含任何预置 Wi-Fi 密码，首次刷机后自动开启独立随机密码配网热点；底层硬件驱动遵循 Zectrix Lab MIT 协议（详见 [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md)）。
+> 本仓库为**闭源预编译成品固件发布仓**（不含源代码，仅提供免费脱敏固件、界面预览与刷机指南）。固件默认不包含任何预置 Wi-Fi 密码，首次刷机后自动开启独立随机密码配网热点；底层硬件驱动遵循 Zectrix Lab MIT 协议（详见 [docs/THIRD_PARTY_NOTICES.md](docs/THIRD_PARTY_NOTICES.md)）。
 
 ---
 
@@ -108,5 +108,5 @@
 
 ## 致谢与声明
 
-- 底层 ESP32-S3 墨水屏及板级驱动基于 Zectrix Lab 的 MIT 开源驱动，谨致谢意（详见 [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md)）。
+- 底层 ESP32-S3 墨水屏及板级驱动基于 Zectrix Lab 的 MIT 开源驱动，谨致谢意（详见 [docs/THIRD_PARTY_NOTICES.md](docs/THIRD_PARTY_NOTICES.md)）。
 - 本固件为个人兴趣与体验分享发布，请务必在刷机前自行备份原厂镜像；因不当操作造成的硬件或数据损失需自行承担。
